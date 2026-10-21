@@ -1,6 +1,6 @@
 import Link from "next/link"; // Transição suave entre as páginas sem recarregar a aba
 
-// Componente que mostra um único agente
+// Componente que mostra apenas um agente
 const AgentCard = ({ agent }) => {
   return (
     <li className="p-4 flex items-center gap-4 bg-gray-900 border border-gray-700 rounded">
