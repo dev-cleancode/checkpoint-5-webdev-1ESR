@@ -17,7 +17,7 @@ https://checkpoint-5-seven.vercel.app
 
 ## Sobre a API
 
-Foi usada a Valorant API (https://valorant-api.com), uma API pública que não exige autenticação e traz dados do jogo Valorant, como agentes, mapas e armas. Neste projeto usamos apenas os agentes.
+Foi usada a Valorant API (https://valorant-api.com), uma API pública que traz dados do jogo Valorant, como agentes, mapas e armas. Neste projeto usamos apenas os agentes.
 
 - Lista de agentes jogáveis: `https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=pt-BR`
 - Detalhe de um agente: `https://valorant-api.com/v1/agents/{uuid}`
