@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Checkpoint 5 - Web Development
 
-## Getting Started
+Aplicação Next.js que lista os agentes de Valorant e mostra os detalhes de cada um, consumindo a API pública valorant-api.com com axios.
 
-First, run the development server:
+## Grupo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Integrantes:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 570881 - Gabriel Freitas da Silva Carvalho
+- 572892 - Erick Martins Picolo
+- 572171 - Guilherme Marcon Dantas
+- 569782 - Luiz Felipe Cardoso de Oliveira
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+https://checkpoint-5-seven.vercel.app
 
-## Learn More
+## Sobre a API
 
-To learn more about Next.js, take a look at the following resources:
+Foi usada a Valorant API (https://valorant-api.com), uma API pública que não exige autenticação e traz dados do jogo Valorant, como agentes, mapas e armas. Neste projeto usamos apenas os agentes.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Lista de agentes jogáveis: `https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=pt-BR`
+- Detalhe de um agente: `https://valorant-api.com/v1/agents/{uuid}`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Cada agente possui nome, descrição, função (Duelista, Sentinela, Controlador ou Iniciador), ícone, imagem, e habilidades. O campo `uuid` é o identificador do agente e é usado na rota de detalhes.
 
-## Deploy on Vercel
+## Funcionalidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Página inicial com a lista de agentes buscada com axios.
+- Página de detalhes que busca o agente escolhido na API com axios.
+- Uso de `useState` para guardar os dados e `useEffect` para carregá-los.
+- Navegação entre as páginas com o Next Router (`Link`, `useParams` e `useRouter`).
+- Props para passar dados entre os componentes.
+- Comentários no código explicando os pontos principais.
