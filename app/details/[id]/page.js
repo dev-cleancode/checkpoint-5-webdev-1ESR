@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
+import Header from "../../components/Header";
 
 const AgentDetailPage = () => {
   const params = useParams(); // Pega o id que vem na URL (o uuid)
@@ -38,25 +39,27 @@ const AgentDetailPage = () => {
   // Enquanto a API não da os dados, dica em "loading"
   if (loading) {
     return (
-      <div className="bg-black p-6">
-        <div>
+      <div className="min-h-screen bg-black p-6">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <Header />
           <Loading />
         </div>
       </div>
     );
   }
 
-  // Controle caso dê erro na API, para não quebrar o código
+  // Controle caso der erro na API, para não quebrar o código
   if (!agent) {
     return (
-      <div className="bg-black p-6">
-        <div className="space-y-4">
+      <div className="min-h-screen bg-black p-6">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <Header />
           <ErrorMessage />
           <button
             onClick={() => router.back()}
-            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
+            className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
           >
-            ← Voltar
+            Voltar
           </button>
         </div>
       </div>
@@ -64,10 +67,13 @@ const AgentDetailPage = () => {
   }
 
   return (
-    <div className="bg-black p-6">
-      <div className="space-y-6">
+    <div className="min-h-screen bg-black p-6">
+      <div className="max-w-3xl mx-auto space-y-6">
+        <Header />
         <section className="bg-gray-900 border border-gray-700 rounded p-4 space-y-4">
+          {/* Nome do agente */}
           <h1 className="text-2xl font-bold text-white">{agent.displayName}</h1>
+          {/* Role do agente */}
           <p className="text-red-500">{agent.role?.displayName}</p>
           {/* Imagem do agente */}
           <img src={agent.fullPortrait} alt={agent.displayName} className="h-64 rounded"/>
@@ -80,7 +86,7 @@ const AgentDetailPage = () => {
             {/* Botão para voltar para a página anterior */}
             <button
               onClick={() => router.back()}
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
+              className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
             >
               Voltar
             </button>

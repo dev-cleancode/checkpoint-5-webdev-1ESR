@@ -2,7 +2,8 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
-import AgentCard from "./components/AgentCard"; // Componente que desenha cada agente
+import Header from "./components/Header"; // Topo da página
+import AgentList from "./components/AgentList"; // Componente que desenha a lista de agentes
 
 const HomePage = () => {
   // Guarda a lista de agentes que vieram da API
@@ -29,13 +30,8 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-black p-6">
       <div className="max-w-3xl mx-auto space-y-6">
-        <h1 className="text-2xl font-bold text-white text-center">Agentes</h1>
-        <ul className="grid grid-cols-2 gap-4">
-          {/* Percorre a lista e renderiza um AgentCard para cada agente; key ajuda o React a identificar cada item */}
-          {agents.map((agent) => (
-            <AgentCard key={agent.uuid} agent={agent} />
-          ))}
-        </ul>
+        <Header />
+        <AgentList agents={agents} />
       </div>
     </div>
   );
