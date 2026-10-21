@@ -40,12 +40,21 @@ const HomePage = () => {
           "https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=pt-BR"
         );
         setAgents(res.data.data);
+        // Guarda a lista no navegador para usar quando a API falhar
+        localStorage.setItem("agents", JSON.stringify(res.data.data));
         setLoading(false);
       } catch (error) {
         // Se a API falhar, mostra o erro no console em vez de quebrar a página
         console.log(error);
-        // Liga o estado de erro para avisar o usuário na tela
-        setError(true);
+        // Tenta pegar a lista que ficou guardada da última vez
+        const saved = localStorage.getItem("agents");
+        if (saved) {
+          // Tinha lista guardada: converte de texto para lista e usa ela
+          setAgents(JSON.parse(saved));
+        } else {
+          // Liga o estado de erro para avisar o usuário na tela
+          setError(true);
+        }
         setLoading(false);
       }
     };
