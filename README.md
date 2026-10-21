@@ -32,3 +32,9 @@ Cada agente possui nome, descrição, função (Duelista, Sentinela, Controlador
 - Navegação entre as páginas com o Next Router (`Link`, `useParams` e `useRouter`).
 - Props para passar dados entre os componentes.
 - Comentários no código explicando os pontos principais.
+
+## Pontos extras implementados
+
+- Tratamento de loading e erro;
+- Busca por texto;
+- Cache offline com localStorage.
