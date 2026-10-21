@@ -22,7 +22,7 @@ Foi usada a Valorant API (https://valorant-api.com), uma API pública que traz d
 - Lista de agentes jogáveis: `https://valorant-api.com/v1/agents?isPlayableCharacter=true&language=pt-BR`
 - Detalhe de um agente: `https://valorant-api.com/v1/agents/{uuid}`
 
-Cada agente possui nome, descrição, função (Duelista, Sentinela, Controlador ou Iniciador), ícone, imagem, e habilidades. O campo `uuid` é o identificador do agente e é usado na rota de detalhes.
+Cada agente possui nome, descrição, função (Duelista, Sentinela, Controlador ou Iniciador), ícone, e imagem. O campo `uuid` é o identificador do agente e é usado na rota de detalhes.
 
 ## Funcionalidades
 
