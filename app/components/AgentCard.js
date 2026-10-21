@@ -4,14 +4,14 @@ import Link from "next/link"; // Transição suave entre as páginas sem recarre
 const AgentCard = ({ agent }) => {
   return (
     <li className="p-4 flex items-center gap-4 bg-gray-900 border border-gray-700 rounded">
-      {/* Ícone do agente que vem da API */}
+      {/* Ícone do agente que vem da própria API */}
       <img
         src={agent.displayIcon}
         alt={agent.displayName}
         className="w-12 h-12 rounded"
       />
       <div>
-        {/* Clicar no nome leva para a página de detalhes, usando o uuid do agente como id */}
+        {/* Clicar NO NOME leva para a página de detalhes, usando o uuid do agente como id */}
         <Link
           href={`/details/${agent.uuid}`}
           className="font-medium text-white hover:text-red-500 transition-colors"
